@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="FitPlate helps you track workouts, meals, and progress with personalized plans.">
+  <title>FitPlate</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container fade-in">
+        <header>
+        <div class="brand">
+            <div class="app-icon" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="32" cy="32" r="28" fill="white" opacity="0.12" />
+                <circle cx="32" cy="32" r="20" stroke="white" stroke-width="3" opacity="0.9" />
+                <rect x="16" y="30" width="32" height="6" rx="3" fill="white" />
+                <rect x="10" y="26" width="6" height="14" rx="2" fill="white" />
+                <rect x="48" y="26" width="6" height="14" rx="2" fill="white" />
+            </svg>
+            </div>
+            <div>
+            <a href="input.html" class="brand-title">FitPlate</a>
+            <small class="brand-subtitle">Feed your workout</small>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <a href="input.html">Dashboard</a>
+                <a href="#meal">Meals</a>
+                <a href="#workout">Workout</a>
+                <a href="#progress">Progress</a>
+                <a class="btn" href="#plans">Start for free</a> 
+            </ul>
+        </nav>
+        </header>
+
+        <main class="hero">
+        <section class="hero-card fade-in">
+            <h2>Reach your goals</h2>
+            <p>Personalized plans, visual progress tracking, and performance-focused recipes.</p>
+
+            <div class="hero-buttons">
+            <button class="btn">Meals</button>
+            <button class="btn secondary">Workouts</button>
+            <button class="btn tertiary">Progress</button>
+            </div>
+
+            <div class="progress-wrap" aria-label="Weekly Goals">
+            <div class="progress-info">
+                <small>Weekly Goal: 5 workouts</small>
+                <small class="bold">3/5</small>
+            </div>
+            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">
+                <span id="weekProgress"></span>
+                <div class="label" id="weekLabel">0%</div>
+            </div>
+            </div>
+        </section>
+
+        <aside class="hero-card fade-in">
+            <h3>Quick Overview</h3>
+            <p>Visualize calories, macros, and performance in intuitive graphs.</p>
+
+            <div class="cards">
+            <div class="card">
+                <h3>Nutrition 🍝</h3>
+                <p>Balanced recipes and flexible plans based on your goals.</p>
+            </div>
+            <div class="card">
+                <h3>Workouts 💪</h3>
+                <p>Routines for strength and endurance with progression.</p>
+            </div>
+            </div>
+
+            <div class="hero-buttons">
+            <button class="btn full-width">Login/Register</button>
+            </div>
+        </aside>
+        </main>
+
+        <section class="info-grid fade-in">
+            <!-- Top Row -->
+            <div class="top-row">
+                <div class="grid-card" id="eating-tips">
+                <h4>Weekly Eating Tips</h4>
+                <ul>
+                    <li>Drink at least 8 glasses of water daily.</li>
+                    <li>Add protein to every meal.</li>
+                    <li>Include colorful fruits and vegetables.</li>
+                </ul>
+                </div>
+                <div class="grid-card" id="supplements-tips">
+                <h4>Supplement Tips</h4>
+                <ul>
+                    <li>Whey protein for muscle recovery.</li>
+                    <li>Creatine for strength and endurance.</li>
+                    <li>Omega-3 for joint and heart health.</li>
+                </ul>
+                </div>
+                <div class="grid-card" id="exercise-tips">
+                <h4>Weekly Exercise Tips</h4>
+                <ul>
+                    <li>Strength training 2-3 times a week.</li>
+                    <li>Include 30 minutes of cardio daily.</li>
+                    <li>Stretch before and after workouts.</li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="bottom-row">
+                <div class="grid-card" id="achievements-status">
+                    <h4>Status</h4>
+                    <div class="placeholder-image">🏅</div>
+                    <p>Track your completed workouts and milestones.</p>
+                </div>
+                <div class="grid-card" id="achievements-goals">
+                    <h4>Goals</h4>
+                    <div class="placeholder-image">🎯</div>
+                    <p>See your weekly goals and achievements.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="supplements-store fade-in" id="supplements">
+        <h3>Supplements Store</h3>
+        <div class="supplements-cards">
+            <div class="supplement-card">
+                <img src="images/whey.jpg" alt="Whey Protein" loading="lazy">
+                <h4>Whey Protein</h4>
+                <p>Supports muscle growth and recovery.</p>
+            </div>
+            <div class="supplement-card">
+                <img src="images/creatine.jpg" alt="Creatine" loading="lazy">
+                <h4>Creatine</h4>
+                <p>Enhances strength and endurance.</p>
+            </div>
+            <div class="supplement-card">
+                <img src="images/omega-3.jpg" alt="Omega-3" loading="lazy">
+                <h4>Omega-3</h4>
+                <p>Supports heart and joint health.</p>
+            </div>
+        </div>
+
+        <a class="btn" href="https://bryanwessantana.github.io/wdd231/final/index.html" 
+            target="_blank">Buy Now
+        </a>
+        </section>
+
+        <section class="meals fade-in" id="meal">
+                <h3>Healthy Meal Ideas</h3>
+                <form id="mealSearchForm">
+                    <input type="text" id="mealQuery" placeholder="Search meals (e.g., chicken, salad)" />
+                    <button type="submit" class="btn">Search</button>
+                </form>
+                <div class="loader" id="mealLoader"></div>
+                <div class="meal-cards" id="mealCards"></div>
+        </section>
+
+        <section class="workouts fade-in" id="workout">
+        <h3>Workouts</h3>
+        <div class="workout-cards">
+            <div class="workout-card">
+                <img src="images/strength.jpg" alt="strength" loading="lazy">
+                <h4>Strength Training</h4>
+                <p>Build muscle and improve overall strength.</p>
+                <button class="btn">Add to My Plan</button>
+            </div>
+            <div class="workout-card">
+                <img src="images/cardio.jpg" alt="cardio" loading="lazy">
+                <h4>Cardio</h4>
+                <p>Boost endurance and burn calories effectively.</p>
+                <button class="btn">Add to My Plan</button>
+            </div>
+            <div class="workout-card">
+                <img src="images/yoga.jpg" alt="yoga" loading="lazy">
+                <h4>Yoga & Stretching</h4>
+                <p>Increase flexibility and reduce stress.</p>
+                <button class="btn">Add to My Plan</button>
+            </div>
+        </div>
+        </section>
+
+        <section class="profile fade-in" id="profile">
+            <h3>Your Profile</h3>
+            <form id="profileForm">
+                <label>
+                    Name:
+                    <input type="text" name="name" required>
+                </label>
+                <label>
+                    Age:
+                    <input type="number" name="age" min="12" max="100">
+                </label>
+                <label>
+                    Goal:
+                    <select name="goal" required>
+                        <option value="">Select...</option>
+                        <option value="lose">Lose Weight</option>
+                        <option value="gain">Gain Muscle</option>
+                        <option value="maintain">Maintain</option>
+                    </select>
+                </label>
+                <button class="btn" type="submit">Save Profile</button>
+            </form>
+            <div id="profileOutput"></div>
+        </section>
+
+        <section class="plans">
+            <h3>Plans</h3>
+            <div class="identity-buttons">
+                <div class="primary">Simple Plan</div>
+                <div class="primary">Basic Plan</div>
+                <div class="secondary">Basic + Plan</div>
+                <div class="secondary">Executive Plan</div>
+                <div class="accent">Pro Plan</div>
+                <div class="accent">Ultimate Plan</div>
+            </div>
+        </section>
+    </div>
+
+  <script type="module" src="js/script.js"></script>
+  <script type="module" src="js/profile.js"></script>
+  <script type="module" src="js/meals.js"></script>
+</body>
+</html>
