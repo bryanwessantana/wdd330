@@ -32,7 +32,7 @@
 
         <nav>
             <ul>
-                <a href="input.html">Dashboard</a>
+                <a href="index.html">Dashboard</a>
                 <a href="#meal">Meals</a>
                 <a href="#workout">Workout</a>
                 <a href="#progress">Progress</a>
@@ -41,10 +41,18 @@
         </nav>
         </header>
 
+        <!-- Quick Overview -->
         <main class="hero">
         <section class="hero-card fade-in">
             <h2>Reach your goals</h2>
             <p>Personalized plans, visual progress tracking, and performance-focused recipes.</p>
+
+            <section id="quotes" class="fade-in">
+                <h3>Motivation</h3>
+                <blockquote id="quoteText">Loading...</blockquote>
+                <p id="quoteAuthor"></p>
+                <button id="newQuoteBtn" class="btn">New quotation</button>
+            </section>a
 
             <div class="hero-buttons">
             <button class="btn">Meals</button>
@@ -85,6 +93,7 @@
         </aside>
         </main>
 
+        <!-- Weekly Tips -->
         <section class="info-grid fade-in">
             <!-- Top Row -->
             <div class="top-row">
@@ -128,6 +137,7 @@
             </div>
         </section>
 
+        <!-- Supplements Store -->
         <section class="supplements-store fade-in" id="supplements">
         <h3>Supplements Store</h3>
         <div class="supplements-cards">
@@ -153,6 +163,7 @@
         </a>
         </section>
 
+        <!-- Meals -->
         <section class="meals fade-in" id="meal">
                 <h3>Healthy Meal Ideas</h3>
                 <form id="mealSearchForm">
@@ -163,6 +174,7 @@
                 <div class="meal-cards" id="mealCards"></div>
         </section>
 
+        <!-- Workouts -->
         <section class="workouts fade-in" id="workout">
         <h3>Workouts</h3>
         <div class="workout-cards">
@@ -187,6 +199,28 @@
         </div>
         </section>
 
+        <!-- Progress -->
+        <section id="progress" class="fade-in">
+            <h3>Progress Tracker</h3>
+            <form id="progressForm" class="progress-form">
+                <label>
+                    Data:
+                    <input type="date" id="entryDate" name="date" required>
+                </label>
+                <label>
+                    Percentage:
+                    <input type="number" id="entryValue" name="value" min="0" max="100" required>
+                </label>
+                <button type="submit" class="btn">Add</button>
+            </form>
+
+            <canvas id="progressChart" height="120"></canvas>
+
+            <h4>Entries</h4>
+            <ul id="progressList"></ul>
+        </section>
+
+        <!-- Profile -->
         <section class="profile fade-in" id="profile">
             <h3>Your Profile</h3>
             <form id="profileForm">
@@ -202,9 +236,9 @@
                     Goal:
                     <select name="goal" required>
                         <option value="">Select...</option>
-                        <option value="lose">Lose Weight</option>
-                        <option value="gain">Gain Muscle</option>
-                        <option value="maintain">Maintain</option>
+                        <option value="Lose Weight">Lose Weight</option>
+                        <option value="Gain Muscle">Gain Muscle</option>
+                        <option value="Maintain">Maintain</option>
                     </select>
                 </label>
                 <button class="btn" type="submit">Save Profile</button>
@@ -212,7 +246,37 @@
             <div id="profileOutput"></div>
         </section>
 
-        <section class="plans">
+        <!-- My Plan -->
+        <section class="my-plan">
+            <h4>My Plan</h4>
+            <ul id="myPlanList"></ul>
+        </section>
+
+        <!-- Scheduler -->
+         <section id="scheduler">
+            <h3>Generate Schedule</h3>
+            <div id="myWorkoutsContainer"></div>
+            <form id="genScheduleForm">
+                <label>How many sessions per week?
+                    <input type="number" id="sessionsPerWeek" min="1" max="7" value="3">
+                </label>
+                <div>
+                    <label><input type="checkbox" name="day" value="Mon" checked>Mon</label>
+                    <label><input type="checkbox" name="day" value="Tue" checked>Tue</label>
+                    <label><input type="checkbox" name="day" value="Wed" checked>Wed</label>
+                    <label><input type="checkbox" name="day" value="Thu">Thu</label>
+                    <label><input type="checkbox" name="day" value="Fri">Fri</label>
+                    <label><input type="checkbox" name="day" value="Sat">Sat</label>
+                    <label><input type="checkbox" name="day" value="Sun">Sun</label>
+                </div>
+                <button type="submit" class="btn">Generate</button>
+            </form>
+
+            <div id="generateSchedule"></div>
+         </section>
+
+        <!-- Signatures -->
+        <section class="plans" id="plans">
             <h3>Plans</h3>
             <div class="identity-buttons">
                 <div class="primary">Simple Plan</div>
@@ -225,8 +289,12 @@
         </section>
     </div>
 
-  <script type="module" src="js/script.js"></script>
-  <script type="module" src="js/profile.js"></script>
-  <script type="module" src="js/meals.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/profile.js"></script>
+    <script type="module" src="js/meals.js"></script>
+    <script type="module" src="js/scheduler.js"></script>
+    <script type="module" src="js/quotes.js"></script>
 </body>
 </html>
