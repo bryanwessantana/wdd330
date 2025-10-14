@@ -1,300 +1,334 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="FitPlate helps you track workouts, meals, and progress with personalized plans.">
-  <title>FitPlate</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="FitPlate helps you track workouts, meals, and progress with personalized plans.">
+    <title>FitPlate - Feed your workout</title>
+
+    <meta property="og:title" content="FitPlate - Feed your workout" />
+    <meta property="og:description" content="Track workouts, meals, and progress with personalized plans." />
+    <meta property="og:image" content="https://placehold.co/1200x630/1E3A8A/ffffff?text=FitPlate+Pro" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bryanwessantana.github.io/wdd330/" />
+
+    <link rel="icon" type="image/png" href="images/logo1.png">
+    <link rel="canonical" href="https://bryanwessantana.github.io/wdd330/">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <a class="skip-link" href="#main">Skip to the main content</a>
 
-    <div class="container fade-in">
-        <header>
-        <div class="brand">
-            <div class="app-icon" aria-hidden="true">
-            <svg width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="32" cy="32" r="28" fill="white" opacity="0.12" />
-                <circle cx="32" cy="32" r="20" stroke="white" stroke-width="3" opacity="0.9" />
-                <rect x="16" y="30" width="32" height="6" rx="3" fill="white" />
-                <rect x="10" y="26" width="6" height="14" rx="2" fill="white" />
-                <rect x="48" y="26" width="6" height="14" rx="2" fill="white" />
-            </svg>
-            </div>
-            <div>
-            <a href="input.html" class="brand-title">FitPlate</a>
-            <small class="brand-subtitle">Feed your workout</small>
-            </div>
+    <header class="main-header">
+        <div class="content-wrapper">
+            <nav class="navbar">
+                <div class="logo-area">
+                    <div class="logo">
+                        <img src="images/logo1.png" alt="FitPlate Logo">
+                    </div>
+                    <div class="brand-text">
+                        <h1>FitPlate</h1>
+                        <p>Feed your workout</p>
+                    </div>
+                </div>
+
+                <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-menu').classList.toggle('active'); this.classList.toggle('active');">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <nav class="nav-menu">
+                    <a href="#dashboard">Dashboard</a>
+                    <a href="#meal">Meals</a>
+                    <a href="#workout">Workout</a>
+                    <a href="#plans">Progress</a>
+                    <a href="#plans" class="btn cta">Start for free</a>
+                </nav>
+            </nav>
         </div>
+    </header>
 
-        <nav>
-            <ul>
-                <a href="index.html">Dashboard</a>
-                <a href="#meal">Meals</a>
-                <a href="#workout">Workout</a>
-                <a href="#progress">Progress</a>
-                <a class="btn" href="#plans">Start for free</a> 
-            </ul>
-        </nav>
-        </header>
+    <div class="page-content">
+        <section id="main" role="main" class="hero-section page-section">
+            <div class="content-wrapper hero-layout">
+                <div class="card-base hero-main fade-in">
+                    <div>
+                        <h2>Reach your goals</h2>
+                        <p>Personalized plans, visual progress tracking, and performance-focused recipes.</p>
 
-        <!-- Quick Overview -->
-        <main class="hero">
-        <section class="hero-card fade-in">
-            <h2>Reach your goals</h2>
-            <p>Personalized plans, visual progress tracking, and performance-focused recipes.</p>
+                        <h3>Motivation Quote</h3>
+                        <blockquote id="quoteText" aria-live="polite">The body achieves what the mind believes.</blockquote>
+                        <p id="quoteAuthor">Napoleon Hill (Mock)</p>
+                        <button id="newQuoteBtn" class="btn tertiary">New quotation</button>
+                        
+                    </div>
 
-            <section id="quotes" class="fade-in">
-                <h3>Motivation</h3>
-                <blockquote id="quoteText">Loading...</blockquote>
-                <p id="quoteAuthor"></p>
-                <button id="newQuoteBtn" class="btn">New quotation</button>
-            </section>a
+                    <div class="hero-buttons">
+                        <a href="#meal" class="btn secondary">Meals</a>
+                        <a href="#workout" class="btn primary">Workouts</a>
+                        <a href="#progress" class="btn tertiary">Progress</a>
+                    </div>
 
-            <div class="hero-buttons">
-            <button class="btn">Meals</button>
-            <button class="btn secondary">Workouts</button>
-            <button class="btn tertiary">Progress</button>
-            </div>
+                    <div class="progress-wrap" aria-label="Weekly Goals">
+                        <div class="progress-info">
+                            <small>Weekly Goal: 5 workouts</small>
+                            <small class="bold">0/5</small>
+                        </div>
+                        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">
+                            <span id="weekProgress" style="width: 60%;"></span>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="progress-wrap" aria-label="Weekly Goals">
-            <div class="progress-info">
-                <small>Weekly Goal: 5 workouts</small>
-                <small class="bold">3/5</small>
-            </div>
-            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">
-                <span id="weekProgress"></span>
-                <div class="label" id="weekLabel">0%</div>
-            </div>
+                <aside class="card-base hero-aside fade-in">
+                    <h3>Quick Overview</h3>
+                    <p>Visualize calories, macros, and performance in intuitive graphs.</p>
+
+                    <div class="overview-cards">
+                        <div class="card-base">
+                            <h3>Nutrition 🍝</h3>
+                            <p>Balanced recipes and flexible plans based on your goals.</p>
+                        </div>
+                        <div class="card-base">
+                            <h3>Workouts 💪</h3>
+                            <p>Routines for strength and endurance with progression.</p>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons mt-4">
+                        <a href="login-register.html" class="btn primary full-width">Login/Register</a>
+                    </div>
+                </aside>
             </div>
         </section>
 
-        <aside class="hero-card fade-in">
-            <h3>Quick Overview</h3>
-            <p>Visualize calories, macros, and performance in intuitive graphs.</p>
-
-            <div class="cards">
-            <div class="card">
-                <h3>Nutrition 🍝</h3>
-                <p>Balanced recipes and flexible plans based on your goals.</p>
-            </div>
-            <div class="card">
-                <h3>Workouts 💪</h3>
-                <p>Routines for strength and endurance with progression.</p>
-            </div>
-            </div>
-
-            <div class="hero-buttons">
-            <button class="btn full-width">Login/Register</button>
-            </div>
-        </aside>
-        </main>
-
-        <!-- Weekly Tips -->
-        <section class="info-grid fade-in">
-            <!-- Top Row -->
-            <div class="top-row">
-                <div class="grid-card" id="eating-tips">
-                <h4>Weekly Eating Tips</h4>
-                <ul>
-                    <li>Drink at least 8 glasses of water daily.</li>
-                    <li>Add protein to every meal.</li>
-                    <li>Include colorful fruits and vegetables.</li>
-                </ul>
-                </div>
-                <div class="grid-card" id="supplements-tips">
-                <h4>Supplement Tips</h4>
-                <ul>
-                    <li>Whey protein for muscle recovery.</li>
-                    <li>Creatine for strength and endurance.</li>
-                    <li>Omega-3 for joint and heart health.</li>
-                </ul>
-                </div>
-                <div class="grid-card" id="exercise-tips">
-                <h4>Weekly Exercise Tips</h4>
-                <ul>
-                    <li>Strength training 2-3 times a week.</li>
-                    <li>Include 30 minutes of cardio daily.</li>
-                    <li>Stretch before and after workouts.</li>
-                </ul>
-                </div>
-            </div>
-
-            <div class="bottom-row">
-                <div class="grid-card" id="achievements-status">
-                    <h4>Status</h4>
-                    <div class="placeholder-image">🏅</div>
-                    <p>Track your completed workouts and milestones.</p>
-                </div>
-                <div class="grid-card" id="achievements-goals">
-                    <h4>Goals</h4>
-                    <div class="placeholder-image">🎯</div>
-                    <p>See your weekly goals and achievements.</p>
+        <section class="page-section alt-bg fade-in">
+            <div class="content-wrapper">
+                <h2 class="text-center mb-2">Weekly Insights & Achievements</h2>
+                <div class="info-grid-layout">
+                    <!-- Eating Tips -->
+                    <div class="card-base grid-card" id="eating-tips">
+                        <h4>Weekly Eating Tips</h4>
+                        <ul>
+                            <li>Drink at least 8 glasses of water daily.</li>
+                            <li>Add protein to every meal.</li>
+                            <li>Include colorful fruits and vegetables.</li>
+                        </ul>
+                    </div>
+                    <!-- Supplement Tips -->
+                    <div class="card-base grid-card" id="supplements-tips">
+                        <h4>Supplement Tips</h4>
+                        <ul>
+                            <li>Whey protein for muscle recovery.</li>
+                            <li>Creatine for strength and endurance.</li>
+                            <li>Omega-3 for joint and heart health.</li>
+                        </ul>
+                    </div>
+                    <!-- Exercise Tips -->
+                    <div class="card-base grid-card" id="exercise-tips">
+                        <h4>Weekly Exercise Tips</h4>
+                        <ul>
+                            <li>Strength training 2-3 times a week.</li>
+                            <li>Include 30 minutes of cardio daily.</li>
+                            <li>Stretch before and after workouts.</li>
+                        </ul>
+                    </div>
+                    <!-- Status Card -->
+                    <div class="card-base grid-card achievement-card" id="achievements-status">
+                        <h4>Status</h4>
+                        <div class="placeholder-image" role="img" aria-label="medal">🏅</div>
+                        <p>Track your completed workouts and milestones.</p>
+                    </div>
+                    <!-- Goals Card (REMOVED FROM HERE) -->
                 </div>
             </div>
         </section>
 
-        <!-- Supplements Store -->
-        <section class="supplements-store fade-in" id="supplements">
-        <h3>Supplements Store</h3>
-        <div class="supplements-cards">
-            <div class="supplement-card">
-                <img src="images/whey.jpg" alt="Whey Protein" loading="lazy">
-                <h4>Whey Protein</h4>
-                <p>Supports muscle growth and recovery.</p>
+        <section class="page-section fade-in" id="supplements">
+            <div class="content-wrapper">
+                <h2 class="text-center mb-2">Supplements Store</h2>
+                <div class="content-card-grid">
+                    <div class="card-base supplement-card">
+                        <img src="images/whey.jpg" alt="Whey Protein supplement" loading="lazy">
+                        <h4>Whey Protein</h4>
+                        <p>Supports muscle growth and recovery with high-quality protein.</p>
+                    </div>
+                    <div class="card-base supplement-card">
+                        <img src="images/creatine.jpg" alt="Creatine supplement" loading="lazy">
+                        <h4>Creatine</h4>
+                        <p>Enhances strength and power output during intense workouts.</p>
+                    </div>
+                    <div class="card-base supplement-card">
+                        <img src="images/omega-3.jpg" alt="Omega-3 supplement" loading="lazy">
+                        <h4>Omega-3</h4>
+                        <p>Essential fats supporting joint health, heart function, and recovery.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a class="btn primary" href="https://bryanwessantana.github.io/wdd231/final/index.html" target="_blank" rel="noopener noreferrer">
+                        Visit Store
+                    </a>
+                </div>
             </div>
-            <div class="supplement-card">
-                <img src="images/creatine.jpg" alt="Creatine" loading="lazy">
-                <h4>Creatine</h4>
-                <p>Enhances strength and endurance.</p>
-            </div>
-            <div class="supplement-card">
-                <img src="images/omega-3.jpg" alt="Omega-3" loading="lazy">
-                <h4>Omega-3</h4>
-                <p>Supports heart and joint health.</p>
-            </div>
-        </div>
-
-        <a class="btn" href="https://bryanwessantana.github.io/wdd231/final/index.html" 
-            target="_blank">Buy Now
-        </a>
         </section>
 
-        <!-- Meals -->
-        <section class="meals fade-in" id="meal">
-                <h3>Healthy Meal Ideas</h3>
+        <section class="page-section alt-bg fade-in" id="meal">
+            <div class="content-wrapper">
+                <h2 class="text-center mb-2">Healthy Meal Ideas</h2>
                 <form id="mealSearchForm">
+                    <label for="mealQuery" class="sr-only">Search meals</label>
                     <input type="text" id="mealQuery" placeholder="Search meals (e.g., chicken, salad)" />
-                    <button type="submit" class="btn">Search</button>
+                    <button type="submit" class="btn secondary">Search</button>
                 </form>
-                <div class="loader" id="mealLoader"></div>
-                <div class="meal-cards" id="mealCards"></div>
-        </section>
-
-        <!-- Workouts -->
-        <section class="workouts fade-in" id="workout">
-        <h3>Workouts</h3>
-        <div class="workout-cards">
-            <div class="workout-card">
-                <img src="images/strength.jpg" alt="strength" loading="lazy">
-                <h4>Strength Training</h4>
-                <p>Build muscle and improve overall strength.</p>
-                <button class="btn">Add to My Plan</button>
-            </div>
-            <div class="workout-card">
-                <img src="images/cardio.jpg" alt="cardio" loading="lazy">
-                <h4>Cardio</h4>
-                <p>Boost endurance and burn calories effectively.</p>
-                <button class="btn">Add to My Plan</button>
-            </div>
-            <div class="workout-card">
-                <img src="images/yoga.jpg" alt="yoga" loading="lazy">
-                <h4>Yoga & Stretching</h4>
-                <p>Increase flexibility and reduce stress.</p>
-                <button class="btn">Add to My Plan</button>
-            </div>
-        </div>
-        </section>
-
-        <!-- Progress -->
-        <section id="progress" class="fade-in">
-            <h3>Progress Tracker</h3>
-            <form id="progressForm" class="progress-form">
-                <label>
-                    Data:
-                    <input type="date" id="entryDate" name="date" required>
-                </label>
-                <label>
-                    Percentage:
-                    <input type="number" id="entryValue" name="value" min="0" max="100" required>
-                </label>
-                <button type="submit" class="btn">Add</button>
-            </form>
-
-            <canvas id="progressChart" height="120"></canvas>
-
-            <h4>Entries</h4>
-            <ul id="progressList"></ul>
-        </section>
-
-        <!-- Profile -->
-        <section class="profile fade-in" id="profile">
-            <h3>Your Profile</h3>
-            <form id="profileForm">
-                <label>
-                    Name:
-                    <input type="text" name="name" required>
-                </label>
-                <label>
-                    Age:
-                    <input type="number" name="age" min="12" max="100">
-                </label>
-                <label>
-                    Goal:
-                    <select name="goal" required>
-                        <option value="">Select...</option>
-                        <option value="Lose Weight">Lose Weight</option>
-                        <option value="Gain Muscle">Gain Muscle</option>
-                        <option value="Maintain">Maintain</option>
-                    </select>
-                </label>
-                <button class="btn" type="submit">Save Profile</button>
-            </form>
-            <div id="profileOutput"></div>
-        </section>
-
-        <!-- My Plan -->
-        <section class="my-plan">
-            <h4>My Plan</h4>
-            <ul id="myPlanList"></ul>
-        </section>
-
-        <!-- Scheduler -->
-         <section id="scheduler">
-            <h3>Generate Schedule</h3>
-            <div id="myWorkoutsContainer"></div>
-            <form id="genScheduleForm">
-                <label>How many sessions per week?
-                    <input type="number" id="sessionsPerWeek" min="1" max="7" value="3">
-                </label>
-                <div>
-                    <label><input type="checkbox" name="day" value="Mon" checked>Mon</label>
-                    <label><input type="checkbox" name="day" value="Tue" checked>Tue</label>
-                    <label><input type="checkbox" name="day" value="Wed" checked>Wed</label>
-                    <label><input type="checkbox" name="day" value="Thu">Thu</label>
-                    <label><input type="checkbox" name="day" value="Fri">Fri</label>
-                    <label><input type="checkbox" name="day" value="Sat">Sat</label>
-                    <label><input type="checkbox" name="day" value="Sun">Sun</label>
+                <div class="loader" id="mealLoader" aria-live="polite"></div>
+                <div class="content-card-grid" id="mealCards">
+                    <!-- Meal Cards will be populated here by JS -->
                 </div>
-                <button type="submit" class="btn">Generate</button>
-            </form>
-
-            <div id="generateSchedule"></div>
-         </section>
-
-        <!-- Signatures -->
-        <section class="plans" id="plans">
-            <h3>Plans</h3>
-            <div class="identity-buttons">
-                <div class="primary">Simple Plan</div>
-                <div class="primary">Basic Plan</div>
-                <div class="secondary">Basic + Plan</div>
-                <div class="secondary">Executive Plan</div>
-                <div class="accent">Pro Plan</div>
-                <div class="accent">Ultimate Plan</div>
             </div>
         </section>
+
+        <section class="page-section fade-in" id="workout">
+            <div class="content-wrapper">
+                <h2 class="text-center mb-2">Workouts</h2>
+                <div class="content-card-grid">
+                    <div class="card-base workout-card">
+                        <img src="images/strength.jpg" alt="Strength workout example" loading="lazy">
+                        <h4>Strength Training</h4>
+                        <p>Build muscle and improve overall strength using progressive overload.</p>
+                        <button class="btn primary mt-4">Add to My Plan</button>
+                    </div>
+                    <div class="card-base workout-card">
+                        <img src="images/cardio.jpg" alt="Cardio exercise plan" loading="lazy">
+                        <h4>Cardio</h4>
+                        <p>Boost endurance, improve heart health, and burn calories effectively.</p>
+                        <button class="btn primary mt-4">Add to My Plan</button>
+                    </div>
+                    <div class="card-base workout-card">
+                        <img src="images/yoga.jpg" alt="Yoga and stretching exercises" loading="lazy">
+                        <h4>Yoga & Stretching</h4>
+                        <p>Increase flexibility, reduce muscle tension, and find mental clarity.</p>
+                        <button class="btn primary mt-4">Add to My Plan</button>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a class="btn primary" href="workouts.html" target="_blank" rel="noopener noreferrer">
+                        See more
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section alt-bg fade-in">
+            <div class="content-wrapper">
+                <h2 class="text-center mb-2">Dashboard Tools</h2>
+                <div class="grouped-layout">
+
+                    <!-- Profile (NEW GOALS CONTENT ADDED VIA JS) -->
+                    <div class="profile card-base" id="profile">
+                        <h3>Your Profile</h3>
+                        <form id="profileForm">
+                            <label for="profileName">Name:</label>
+                            <input type="text" id="profileName" name="name" required>
+                            <label for="profileAge">Age:</label>
+                            <input type="number" id="profileAge" name="age" min="12" max="100">
+                            <label for="profileGoal">Goal:</label>
+                            <select id="profileGoal" name="goal" required>
+                                <option value="">Select...</option>
+                                <option value="Lose Weight">Lose Weight</option>
+                                <option value="Gain Muscle">Gain Muscle</option>
+                                <option value="Maintain">Maintain</option>
+                            </select>
+                            <button class="btn primary mt-4" type="submit">Save Profile</button>
+                        </form>
+                        <!-- profileOutput now displays Goals/Medal -->
+                        <div id="profileOutput" aria-live="polite" class="mt-4 text-light"></div>
+                    </div>
+
+                    <!-- Scheduler -->
+                    <div id="scheduler" class="card-base">
+                        <h3>Generate Schedule</h3>
+                        <div id="myWorkoutsContainer"></div>
+                        <form id="genScheduleForm">
+                            <label for="sessionsPerWeek">Sessions per week:</label>
+                            <input type="number" id="sessionsPerWeek" min="1" max="7" value="3">
+                            <fieldset>
+                                <legend>Select training days:</legend>
+                                <label><input type="checkbox" name="day" value="Mon" checked>Mon</label>
+                                <label><input type="checkbox" name="day" value="Tue" checked>Tue</label>
+                                <label><input type="checkbox" name="day" value="Wed" checked>Wed</label>
+                                <label><input type="checkbox" name="day" value="Thu">Thu</label>
+                                <label><input type="checkbox" name="day" value="Fri">Fri</label>
+                                <label><input type="checkbox" name="day" value="Sat">Sat</label>
+                                <label><input type="checkbox" name="day" value="Sun">Sun</label>
+                            </fieldset>
+                            <button type="submit" class="btn secondary mt-4">Generate</button>
+                        </form>
+                        <div id="generateSchedule"></div>
+                    </div>
+
+                    <!-- My Plan -->
+                    <div class="my-plan card-base">
+                        <h3>My Plan</h3>
+                        <p class="text-light">Workouts added to your plan will show up here.</p>
+                        <ul id="myPlanList"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section fade-in" id="plans">
+            <div class="content-wrapper">
+                <h2 class="text-center mb-2">Choose Your Plan</h2>
+                <div class="plan-cards-layout">
+                    <div class="card-base plan-item primary">
+                        <h4>Simple Plan</h4>
+                        <p>Essential tracking</p>
+                    </div>
+                    <div class="card-base plan-item primary">
+                        <h4>Basic Plan</h4>
+                        <p>Core features</p>
+                    </div>
+                    <div class="card-base plan-item secondary">
+                        <h4>Basic + Plan</h4>
+                        <p>Advanced macros</p>
+                    </div>
+                    <div class="card-base plan-item secondary">
+                        <h4>Executive Plan</h4>
+                        <p>Priority support</p>
+                    </div>
+                    <div class="card-base plan-item accent">
+                        <h4>Pro Plan</h4>
+                        <p>AI scheduling</p>
+                    </div>
+                    <div class="card-base plan-item accent">
+                        <h4>Ultimate Plan</h4>
+                        <p>Everything included</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
-    <!-- Scripts -->
+    <footer class="main-footer">
+        <div class="content-wrapper">
+            <p>&copy; 2025 | FitPlate.</p> 
+            <p>All rights reserved. Designed for a modern web experience.</p>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/storage.js"></script>
+    <script type="module" src="js/api.js"></script>
     <script type="module" src="js/profile.js"></script>
-    <script type="module" src="js/meals.js"></script>
+    <script type="module" src="js/workouts.js"></script>
     <script type="module" src="js/scheduler.js"></script>
+    <script type="module" src="js/meals.js"></script>
     <script type="module" src="js/quotes.js"></script>
 </body>
 </html>

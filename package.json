@@ -1,0 +1,13 @@
+{
+  "name": "wdd330-project",
+  "version": "1.0.0",
+  "description": "Fitness and meal tracking web app for WDD330.",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint js/",
+    "lint:fix": "eslint js/ --fix"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0"
+  }
+}

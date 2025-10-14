@@ -1,13 +1,13 @@
-const API_KEY = "b2154bb255164355bec4220de9ed1598";
+const API_KEY = "";
 const BASE_URL = "https://api.spoonacular.com/recipes";
-const MEALDB_BASE = "https://www.themealdb.com/api/json/v1/1"
+const MEALDB_BASE = "https://www.themealdb.com/api/json/v1/1";
 
 export async function fetchMeals(query = "chicken") {
-    try {
+  try {
     if (API_KEY && API_KEY.trim().length > 0) {
       // Spoonacular (requires API key)
       const res = await fetch(
-        `${SPOON_BASE}/complexSearch?query=${encodeURIComponent(query)}&number=6&apiKey=${API_KEY}`
+        `${BASE_URL}/complexSearch?query=${encodeURIComponent(query)}&number=6&apiKey=${API_KEY}`
       );
       if (!res.ok) throw new Error("Spoonacular fetch failed");
       return await res.json(); // shape: { results: [ { id, title, image } ] }
@@ -17,10 +17,10 @@ export async function fetchMeals(query = "chicken") {
       if (!res.ok) throw new Error("MealDB fetch failed");
       const json = await res.json();
       // Normalize to { results: [ { title, image } ] }
-      const results = (json.meals || []).map(m => ({
+      const results = (json.meals || []).map((m) => ({
         id: m.idMeal,
         title: m.strMeal,
-        image: m.strMealThumb
+        image: m.strMealThumb,
       }));
       return { results };
     }
